@@ -34,9 +34,16 @@ body {
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-#card:hover {
+#card:active {
     transform: translate(4px, 4px);
     box-shadow: 4px 4px 0 #000;
+}
+
+@media (hover: hover) {
+    #card:hover {
+        transform: translate(4px, 4px);
+        box-shadow: 4px 4px 0 #000;
+    }
 }
 
 .card-content {
