@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(47, 88%, 63%);
+    min-height: 100vh;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* makes the content completely centered */
+}
+
+@media (min-width: 768px) { 
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#card {
+    max-width: 310px;
+    width: 100%; /* this allows the card to shrink properly on small screens */
+    min-width: 0;
+    height: auto; /* with this auto height the container may grow depending only on it's content w/o limitations */
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 16px;
+    box-shadow: 8px 8px 0 #000;
+    padding: 1.3rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#card:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 4px 4px 0 #000;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+}
+
+.image {
+    /* height: 195px; - instead of fixed height, use aspect-ratio to make image more responsive*/
+    height: clamp(160px, 40vw, 195px); /* min: 160px - preferred: scales with viewport (40vw) -
+    max: 195px */
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.card-content, .name  {
+    font-family: 'Figtree', Arial;
+}
+
+.badge {
+    display: inline-block;
+    background-color: hsl(47, 88%, 63%);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.4rem 0.75rem;
+    border-radius: 3px;
+    line-height: 1;
+    align-self: flex-start;
+    margin-top: 1.2rem;
+}
+
+.card-content p {
+    font-size: .8rem;
+    color: hsl(0, 0%, 42%);
+}
+
+.card-content p:not(.text) {
+    color: black;
+}
+
+.card-content h1 {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.card-content h1:hover {
+    color: hsl(47, 88%, 63%);
+    cursor: pointer;
+}
+
+.text {
+    line-height: 1.3rem;
+}
+
+.name {
+    display: flex;
+    margin-top: 1.5rem;
+}
+
+.name img {
+    width: 30px;
+    height: auto;
+}
+
+.name p {
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    margin-left: .7rem;
+    font-size: .8rem;
+}
+    
+
+
+
+
+
+
